@@ -14,6 +14,7 @@ public class ExtratoLancamentoBuildTest {
     	ExtratoLancamento extrato = new ExtratoLancamentoBuilder()
 		.dataLancamento("22/12/2016").build();
 		
+    	System.out.println(extrato.getDataLancamento());
         assertEquals("22/12/2016", extrato.getDataLancamento());
     }
     
@@ -21,7 +22,7 @@ public class ExtratoLancamentoBuildTest {
     public void testBuilderExtratoLancamentoNull() {
     	ExtratoLancamento extrato = new ExtratoLancamentoBuilder()
 		.dataConfirmacao("22/12/2016").build();
-		
+    	System.out.println(extrato.getDataLancamento());
         assertEquals(null, extrato.getDataLancamento());
         
         
