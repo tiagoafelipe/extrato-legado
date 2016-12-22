@@ -5,5 +5,5 @@ angular
     .constant("config", {
 	  		appName: "App Desafio Cielo",
 	  		appVersion: "1.0",
-	  		apiUrl: "http://localhost:8080"
+	  		apiUrl: "https://desafio-cielo-extrato.herokuapp.com"
   });
