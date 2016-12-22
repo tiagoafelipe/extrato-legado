@@ -37,14 +37,7 @@
          <groupId>com.google.code.gson</groupId>
          <artifactId>gson</artifactId>
       </dependency>
-      <dependency>
-         <groupId>org.hamcrest</groupId>
-         <artifactId>hamcrest-library</artifactId>
-         <version>1.3</version>
-      </dependency>
-      
-      
-   </dependencies>
+    </dependencies>
    <properties>
       <java.version>1.8</java.version>
    </properties>
