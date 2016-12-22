@@ -37,7 +37,7 @@ public class ExtratoApiRestControllerTest {
     }
 
     @Test
-    public void testGetExtratoConexao() throws Exception {
+    public void testGetExtratoApi() throws Exception {
     
     	 mvc.perform(get("/extrato"))
                  .andExpect(status().isOk())
