@@ -1,9 +1,8 @@
 package br.com.tf.desafio.helper.data;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import org.springframework.stereotype.Component;
@@ -33,10 +32,9 @@ public class HelperDataBaseLegado {
 
 	private String loadJson() throws IOException {
 
-		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("databaselegado/lancamento-conta-legado.json").getFile());
+		InputStream is = this.getClass().getClassLoader().getResourceAsStream("databaselegado/lancamento-conta-legado.json");
 		
-		BufferedReader bufferFile = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF8"));
+		BufferedReader bufferFile = new BufferedReader(new InputStreamReader(is));
 		StringBuilder stringBuilder = new StringBuilder();
 		String conteudo;
 
