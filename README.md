@@ -9,5 +9,5 @@ Foi utilizado para desenvolver o projeto Spring Boot para a API REST e no desenv
 
 A aplicação está rodando em uma instância hospedada no Heroku.
 ```
-http://desafio-cielo-extrato.herokuapp.com
+https://desafio-cielo-extrato.herokuapp.com
 ```
