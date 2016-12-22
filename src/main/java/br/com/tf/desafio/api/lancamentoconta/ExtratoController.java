@@ -8,14 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.tf.desafio.api.lancamentoconta.domain.ExtratoLancamento;
 
-@CrossOrigin(origins = "https://desafio-cielo-extrato.herokuapp.com", maxAge = 3600)
+
 @RestController
 public class ExtratoController {
 
@@ -24,7 +23,8 @@ public class ExtratoController {
 	
 	private final Logger logger = LoggerFactory.getLogger(ExtratoController.class);
 	
-	@RequestMapping(value = "/extrato", method = RequestMethod.GET)
+	@CrossOrigin(origins = "https://desafio-cielo-extrato.herokuapp.com")
+    	@GetMapping("/extrato")
 	public @ResponseBody ResponseEntity<List<ExtratoLancamento>> listarExtratoLancamento() {
 		
 		try {
@@ -40,5 +40,7 @@ public class ExtratoController {
 			return new ResponseEntity<List<ExtratoLancamento>>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	
 
 }
