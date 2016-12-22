@@ -6,83 +6,50 @@ import br.com.tf.desafio.api.lancamentoconta.domain.DadosBancario;
 import br.com.tf.desafio.api.lancamentoconta.domain.ExtratoLancamento;
 
 public  class ExtratoLancamentoBuilder {
-	private String dataLancamento;
-	private String nomeTipoOperacao;
-	private Long numeroEvento;
-	private String situacao; 
-	private String dataConfirmacao;
-	private DadosBancario dadosBancarios;
-	private BigDecimal valorFinal;
+	
+	private ExtratoLancamento extratoLancamento = new ExtratoLancamento();
 	
 	public ExtratoLancamentoBuilder(){}
 	
 	 public ExtratoLancamentoBuilder dataLancamento(String dataLancamento)
      {
-         this.dataLancamento = dataLancamento;
+         this.extratoLancamento.setDataLancamento(dataLancamento);
          return this;
      }
 	 public ExtratoLancamentoBuilder nomeTipoOperacao(String nomeTipoOperacao)
      {
-         this.nomeTipoOperacao = nomeTipoOperacao;
+		 this.extratoLancamento.setNomeTipoOperacao(nomeTipoOperacao);
          return this;
      }
 	 public ExtratoLancamentoBuilder numeroEvento(Long numeroEvento)
      {
-         this.numeroEvento =  numeroEvento;
+         this.extratoLancamento.setNumeroEvento(numeroEvento);
          return this;
      }
 	 public ExtratoLancamentoBuilder situacao(String situacao)
      {
-         this.situacao = situacao;
+         this.extratoLancamento.setSituacao(situacao);
          return this;
      }
 	 public ExtratoLancamentoBuilder dataConfirmacao(String dataConfirmacao)
      {
-         this.dataConfirmacao = dataConfirmacao;
+         this.extratoLancamento.setDataConfirmacao(dataConfirmacao);
          return this;
      }
-	 public ExtratoLancamentoBuilder dadosBancarios(String nomeBanco, String contaCorrente, Long agencia,Long codigoBanco)
+	 public ExtratoLancamentoBuilder dadosBancarios(String nomeBanco, String contaCorrente, Long agencia , Long codigoBanco)
      {
-         this.dadosBancarios = new DadosBancario(nomeBanco, contaCorrente, agencia, codigoBanco) ;
+		 DadosBancario dadosBancario = new DadosBancario(nomeBanco, contaCorrente, agencia, codigoBanco);
+         this.extratoLancamento.setDadosBancario(dadosBancario);
          return this;
      }
 	 public ExtratoLancamentoBuilder valorFinal(BigDecimal valorFinal)
      {
-         this.valorFinal = valorFinal;
+         this.extratoLancamento.setValorFinal(valorFinal);
          return this;
      }
 	 
-	 
-	 public String getDataLancamento() {
-		return dataLancamento;
-	}
-
-	public String getNomeTipoOperacao() {
-		return nomeTipoOperacao;
-	}
-
-	public Long getNumeroEvento() {
-		return numeroEvento;
-	}
-
-	public String getSituacao() {
-		return situacao;
-	}
-
-	public String getDataConfirmacao() {
-		return dataConfirmacao;
-	}
-
-	public DadosBancario getDadosBancarios() {
-		return dadosBancarios;
-	}
-
-	public BigDecimal getValorFinal() {
-		return valorFinal;
-	}
-
-	public ExtratoLancamento build()
+	 public ExtratoLancamento build()
      {
-         return new ExtratoLancamento(this);
+         return this.extratoLancamento;
      }
 }

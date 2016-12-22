@@ -38,5 +38,7 @@ public class ExtratoController {
 			return new ResponseEntity<List<ExtratoLancamento>>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	
 
 }

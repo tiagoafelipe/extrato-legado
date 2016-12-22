@@ -2,8 +2,6 @@ package br.com.tf.desafio.api.lancamentoconta.domain;
 
 import java.math.BigDecimal;
 
-import br.com.tf.desafio.api.lancamentoconta.builder.ExtratoLancamentoBuilder;
-
 public class ExtratoLancamento {
 
 	
@@ -79,23 +77,10 @@ public class ExtratoLancamento {
 		this.valorFinal = valorFinal;
 	}
 	
-	
-	
-
-	public ExtratoLancamento(ExtratoLancamentoBuilder builder) {
-		this.dataLancamento = builder.getDataLancamento();
-		this.nomeTipoOperacao = builder.getNomeTipoOperacao();
-		this.numeroEvento = builder.getNumeroEvento();
-		this.situacao = builder.getSituacao();
-		this.dataConfirmacao = builder.getDataConfirmacao();
-		this.dadosBancario = builder.getDadosBancarios();
-		this.valorFinal = builder.getValorFinal();
+	public ExtratoLancamento() {
+		
 	}
 	
-	
-	
-
-
 	
 }
 

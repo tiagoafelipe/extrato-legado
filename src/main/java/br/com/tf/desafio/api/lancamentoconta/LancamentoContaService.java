@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import br.com.tf.desafio.api.lancamentoconta.builder.ExtratoLancamentoBuilder;
 import br.com.tf.desafio.api.lancamentoconta.domain.ExtratoLancamento;
@@ -18,7 +18,7 @@ import br.com.tf.desafio.lancamentocontalegado.domain.LancamentoLegado;
 
 
 
-@Repository
+@Service
 public class LancamentoContaService {
 
 	
