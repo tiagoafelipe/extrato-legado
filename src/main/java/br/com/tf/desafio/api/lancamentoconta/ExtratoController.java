@@ -18,6 +18,7 @@ import com.knappsack.swagger4springweb.controller.ApiDocumentationController;
 
 
 @RestController
+@RequestMapping("/extrato")
 public class ExtratoController extends ApiDocumentationController{
 
     public ExtratoController() {
@@ -32,8 +33,7 @@ public class ExtratoController extends ApiDocumentationController{
 	
 	private final Logger logger = LoggerFactory.getLogger(ExtratoController.class);
 	
-	@CrossOrigin(origins = "https://desafio-cielo-extrato.herokuapp.com")
-    	@GetMapping("/extrato")
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<List<ExtratoLancamento>> listarExtratoLancamento() {
 		
 		try {
