@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.tf.desafio.api.lancamentoconta.domain.ExtratoLancamento;
 
+@CrossOrigin(origins = "https://desafio-cielo-extrato.herokuapp.com", maxAge = 3600)
 @RestController
 public class ExtratoController {
 
@@ -21,6 +22,7 @@ public class ExtratoController {
 	private LancamentoContaService service;
 	
 	private final Logger logger = LoggerFactory.getLogger(ExtratoController.class);
+	
 	
 	@RequestMapping(value = "/extrato", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<List<ExtratoLancamento>> listarExtratoLancamento() {
