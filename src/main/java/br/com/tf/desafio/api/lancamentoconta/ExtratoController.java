@@ -14,16 +14,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.tf.desafio.api.lancamentoconta.domain.ExtratoLancamento;
 
+import com.knappsack.swagger4springweb.controller.ApiDocumentationController;
+
 
 @RestController
-public class ExtratoController {
+public class ExtratoController extends ApiDocumentationController{
+
+    public ExtratoController() {
+	    setBasePath("https://desafio-cielo-extrato.herokuapp.com");
+	    setBaseControllerPackage("br.com.tf.desafio.api");
+	    setBaseModelPackage("br.com.tf.desafio");
+	    setApiVersion("v1");
+    }
 
 	@Autowired
 	private LancamentoContaService service;
 	
 	private final Logger logger = LoggerFactory.getLogger(ExtratoController.class);
 	
-	
+	@CrossOrigin(origins = "https://desafio-cielo-extrato.herokuapp.com")
     	@GetMapping("/extrato")
 	public @ResponseBody ResponseEntity<List<ExtratoLancamento>> listarExtratoLancamento() {
 		
