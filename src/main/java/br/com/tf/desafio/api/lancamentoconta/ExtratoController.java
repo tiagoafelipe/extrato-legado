@@ -23,7 +23,7 @@ public class ExtratoController {
 	
 	private final Logger logger = LoggerFactory.getLogger(ExtratoController.class);
 	
-	@CrossOrigin(origins = "https://desafio-cielo-extrato.herokuapp.com")
+	
     	@GetMapping("/extrato")
 	public @ResponseBody ResponseEntity<List<ExtratoLancamento>> listarExtratoLancamento() {
 		
