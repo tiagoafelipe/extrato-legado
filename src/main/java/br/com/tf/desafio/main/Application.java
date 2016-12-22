@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {  "br.com.tf.desafio" , "br.com.tf.desafio.api"})
+@ComponentScan(basePackages = {"br.com.tf.desafio"})
 public class Application   {
 
 	
